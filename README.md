@@ -23,7 +23,7 @@ La base de donnée est maintenant prête à être utilisée avec le projet.
 
 ## Lancer le projet
 
-Ouvrir le projet sur VSCode et exécuter les commandes suivantes pour le projet :
+Ouvrir le projet sur VSCode, aller dans le bon répertoire et exécuter les commandes suivantes pour le projet :
 mvn clean install
 mvn clean
 mvn spring-boot:run
@@ -35,6 +35,8 @@ Pour voir la liste des teams avec leur nom, leur id et les joueurs qui la compos
 http://localhost:8080/index.html
 
 Pour l’instant la liste devrait être vide.
+
+Il est également possible de voir de manière moins jolie sous forme de JSON les listes sur les URL http://localhost:8080/api/teams et http://localhost:8080/api/players mais il est préférable d'utiliser le premier lien pour plus de clarté.
 
 ## Utilisation API avec Postman
 
@@ -64,14 +66,14 @@ On refait pareil avec une autre équipe et on met cette fois
 
 Ici à nouveau après éxecution de la requête postman nous montre l’id de la team.
 
-On a donc bien nos deux écuries de Formule 1 Ferrari et Mercedes qui ont été créées et que l’on peut voir sur http://localhost:8080/api/teams
+On a donc bien nos deux écuries de Formule 1 Ferrari et Mercedes qui ont été créées et que l’on peut voir sur http://localhost:8080/index.html
 
 ### Modifier une team
 
 Je veux modifier l’équipe McLaren pour mettre à la place une équipe Mercedes, je vais donc la modifier.
 
 Je met l’URL suivante sur Postman :
-http://localhost:8080/api/teams/id En remplaçant id par l’id de la team McLaren (indiqué par Postman ou bien sur la liste des teams)
+http://localhost:8080/api/teams/id En remplaçant id par l’id de la team McLaren (indiqué par Postman ou bien sur la liste des teams à http://localhost:8080/index.html)
 
 Mettre la requête en PUT puis sur l'onglet Body sélectionner Raw et format JSON et mettre
 
@@ -102,7 +104,7 @@ Mettre la requête en POST puis sur l'onglet Body sélectionner Raw et format JS
 
 Puis envoyer la requête.
 
-Ici également Postman nous montre l’id généré automatiquement à la création du joueur (on peut aussi le voir sur la liste des players de la page web).
+Ici également Postman nous montre l’id généré automatiquement à la création du joueur (on peut aussi le voir sur la liste des players de la page web http://localhost:8080/index.html).
 
 On fait de même pour les pilotes des autres écuries avec les JSON suivants :
 
@@ -166,7 +168,7 @@ On a donc bien notre pilote Lewis Hamilton qui remplace Carlos Sainz dans l’é
 On va maintenant essayer de supprimer un pilote de l’écurie Mercedes.
 
 Je met l’URL suivante sur Postman :
-http://localhost:8080/api/players/id En remplaçant id par l’id du pilote Andrea Kimi Antonelli (indiqué par Postman ou bien sur la liste des players)
+http://localhost:8080/api/players/id **En remplaçant id par l’id du pilote Andrea Kimi Antonelli** (indiqué par Postman ou bien sur la liste des players)
 
 Mettre la requête en DELETE puis envoyer la requête sans Body.
 
