@@ -4,20 +4,20 @@
 
 Installer MariaDB (pour la configuration entrer le mot de passe "password" sinon cela ne fonctionne pas)
 
-mysql --version
+`mysql --version`
 Pour s'assurer que la commande mysql est reconnue
 Sinon ajouter la variable d'environnement pour aller au dossier bin d'où est installé MariaDB
 
-mysql -u root -p
+`mysql -u root -p`
 Puis entrer le mot de passe "password" pour accéder à la console MariaDB
 
 Commandes à entrer pour configurer la base de données :
 
-CREATE DATABASE teamplayerdb;
+`CREATE DATABASE teamplayerdb;
 CREATE USER 'teamplayer_user'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON teamplayerdb.* TO 'teamplayer_user'@'localhost';
 FLUSH PRIVILEGES;
-EXIT;
+EXIT;`
 
 La base de donnée est maintenant prête à être utilisée avec le projet.
 
@@ -104,12 +104,15 @@ Ici également Postman nous montre l’id généré automatiquement à la créat
 On fait de même pour les pilotes des autres écuries avec les JSON suivants :
 
 Pour Ferrari :
+`
 {
 	"name": "Carlos Sainz",
 	"team": {
-		"id": id →En remplaçant id par l’id de la team Ferrari
+		"id": id
 	}
 }
+`
+→ En remplaçant id par l’id de la team Ferrari
 
 Pour Mercedes :
 {
