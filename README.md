@@ -168,7 +168,7 @@ On a donc bien notre pilote Lewis Hamilton qui remplace Carlos Sainz dans l’é
 On va maintenant essayer de supprimer un pilote de l’écurie Mercedes.
 
 Je met l’URL suivante sur Postman :
-http://localhost:8080/api/players/id **En remplaçant id par l’id du pilote Andrea Kimi Antonelli** (indiqué par Postman ou bien sur la liste des players)
+http://localhost:8080/api/players/id En remplaçant id par l’id du pilote Andrea Kimi Antonelli (indiqué par Postman ou bien sur la liste des players)
 
 Mettre la requête en DELETE puis envoyer la requête sans Body.
 
