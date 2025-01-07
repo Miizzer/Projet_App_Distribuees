@@ -13,11 +13,11 @@ Puis entrer le mot de passe "password" pour accéder à la console MariaDB
 
 Commandes à entrer pour configurer la base de données :
 
-`CREATE DATABASE teamplayerdb;
-CREATE USER 'teamplayer_user'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON teamplayerdb.* TO 'teamplayer_user'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;`
+`CREATE DATABASE teamplayerdb;`
+`CREATE USER 'teamplayer_user'@'localhost' IDENTIFIED BY 'password';`
+`GRANT ALL PRIVILEGES ON teamplayerdb.* TO 'teamplayer_user'@'localhost';`
+`FLUSH PRIVILEGES;`
+`EXIT;`
 
 La base de donnée est maintenant prête à être utilisée avec le projet.
 
@@ -47,9 +47,9 @@ http://localhost:8080/api/teams
 
 Mettre la requête en POST puis sur l'onglet Body sélectionner Raw et format JSON et mettre
 
-{
+`{
 	"name": "Ferrari"
-}
+}`
 
 Puis envoyer la requête
 La team sera créée et un message sera renvoyé dans la console avec également l’id de la team (créé automatiquement) qu’il faudra retenir pour la suite quand on voudra ajouter des players ou modifier une équipe (on peut également voir l’id de la team sur la liste des teams de la page web).
@@ -58,9 +58,9 @@ Si on regarde la liste des team on voit que l’équipe Ferrari a été créée 
 
 On refait pareil avec une autre équipe et on met cette fois
 
-{
+`{
 	"name": "McLaren"
-}
+}`
 
 Ici à nouveau après éxecution de la requête postman nous montre l’id de la team.
 
@@ -75,9 +75,9 @@ http://localhost:8080/api/teams/id En remplaçant id par l’id de la team McLar
 
 Mettre la requête en PUT puis sur l'onglet Body sélectionner Raw et format JSON et mettre
 
-{
+`{
 	"name": "Mercedes"
-}
+}`
 
 On a donc bien notre écurie Mercedes qui remplace McLaren.
 
@@ -90,12 +90,15 @@ http://localhost:8080/api/players
 
 Mettre la requête en POST puis sur l'onglet Body sélectionner Raw et format JSON et mettre
 
+`
 {
 	"name": "Charles Leclerc",
 	"team": {
-		"id": id →En remplaçant id par l’id de la team Ferrari
+		"id": id
 	}
 }
+`
+→En remplaçant id par l’id de la team Ferrari
 
 Puis envoyer la requête.
 
@@ -104,6 +107,7 @@ Ici également Postman nous montre l’id généré automatiquement à la créat
 On fait de même pour les pilotes des autres écuries avec les JSON suivants :
 
 Pour Ferrari :
+
 `
 {
 	"name": "Carlos Sainz",
@@ -115,19 +119,26 @@ Pour Ferrari :
 → En remplaçant id par l’id de la team Ferrari
 
 Pour Mercedes :
+
+`
 {
 	"name": "George Russell",
 	"team": {
-		"id": id →En remplaçant id par l’id de la team Mercedes
+		"id": id
 	}
 }
+`
+→En remplaçant id par l’id de la team Mercedes
 
+`
 {
 	"name": "Andrea Kimi Antonelli",
 	"team": {
-		"id": id →En remplaçant id par l’id de la team Mercedes
+		"id": id
 	}
 }
+`
+→En remplaçant id par l’id de la team Mercedes
 
 Maintenant quand on regarde la liste des teams on voit les deux teams avec leur id respectif et les deux pilotes de chaque écurie.
 
@@ -142,9 +153,11 @@ http://localhost:8080/api/players/id En remplaçant id par l’id du pilote Carl
 
 Mettre la requête en PUT puis sur l'onglet Body sélectionner Raw et format JSON et mettre
 
+`
 {
 	"name": "Lewis Hamilton"
 }
+`
 
 On a donc bien notre pilote Lewis Hamilton qui remplace Carlos Sainz dans l’écurie Ferrari.
 
