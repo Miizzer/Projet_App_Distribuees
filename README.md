@@ -5,7 +5,7 @@
 Installer MariaDB (pour la configuration entrer le mot de passe "password" sinon cela ne fonctionne pas)
 
 `mysql --version`
-Pour s'assurer que la commande mysql est reconnue
+Dans le cmd pour s'assurer que la commande mysql est reconnue
 Sinon ajouter la variable d'environnement pour aller au dossier bin d'où est installé MariaDB
 
 `mysql -u root -p`
