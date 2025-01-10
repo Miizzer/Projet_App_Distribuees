@@ -19,14 +19,17 @@ public class TeamService {
         this.teamRepository = teamRepository;
     }
 
+    // Récuperer toutes les équipes
     public List<Team> getAllTeams() {
         return teamRepository.findAll();
     }
 
+    // Sauvegarder une équipe
     public Team saveTeam(Team team) {
         return teamRepository.save(team);
     }
 
+    // Supprimer une team
     public void deleteTeam(Long id) {
         if (teamRepository.existsById(id)) {
             teamRepository.deleteById(id); // Supprime l'équipe et les joueurs associés

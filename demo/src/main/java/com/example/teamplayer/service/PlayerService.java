@@ -14,14 +14,17 @@ public class PlayerService {
         this.playerRepository = playerRepository;
     }
 
+    // Récuperer tous les joueurs de la base de données
     public List<Player> getAllPlayers() {
         return playerRepository.findAll();
     }
 
+    // Sauvegarder un joueur dans la base de données
     public Player savePlayer(Player player) {
         return playerRepository.save(player);
     }
 
+    // Supprimer un joueur de la base de données
     public void deletePlayer(Long id) {
         playerRepository.deleteById(id);
     }

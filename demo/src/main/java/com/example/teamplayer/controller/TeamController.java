@@ -42,6 +42,7 @@ public class TeamController {
         return teamRepository.save(team);
     }
 
+    // Modifier une team par son id
     @PutMapping("/{id}")
     public ResponseEntity<Team> updateTeam(@PathVariable Long id, @RequestBody Team updatedTeam) {
         return teamRepository.findById(id)
@@ -56,10 +57,11 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
+    // Supprimer une team par son id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTeam(@PathVariable Long id) {
         teamService.deleteTeam(id);
-        return ResponseEntity.noContent().build(); // 204 No Content
+        return ResponseEntity.noContent().build();
     }
 
 }
